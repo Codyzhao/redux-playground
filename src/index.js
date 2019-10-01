@@ -6,7 +6,7 @@ import { createStore, compose } from 'redux';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import reducers from './redux/reducers';
+import reducers from './redux';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
