@@ -1,18 +1,5 @@
-import * as actions from './actions';
+import { combineReducers } from 'redux';
+import counter from '../component/counter/counter.duck';
 
-const initialState = {
-  count: 0
-};
-
-export default (state = initialState, action) => {
-  const { type, payload } = action;
-
-  const reducer = {
-    [actions.ADD_COUNTER]: (state, payload) => ({
-      ...state,
-      count: payload
-    }),
-  }[type];
-
-  return reducer ? reducer(state, payload) : state;
-};
+const rootReducer = combineReducers({counter});
+export default rootReducer;
