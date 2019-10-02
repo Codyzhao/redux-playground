@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 
 import { addCounter } from './counter.duck';
 import CounterComp from './Counter.component';
+import * as selectors from './counter.selector';
 
 const handleClick = (value, addCounter) => e => {
   e.preventDefault();
@@ -17,7 +18,7 @@ const Counter = props => <CounterComp {...props} handleClick={handleClick} />;
  ***************/
 
 const mapStateToProps = state => ({
-  count: state.counter.count
+  count: selectors.countSelector(state)
 });
 
 const mapDispatchToProps = dispatch => ({
