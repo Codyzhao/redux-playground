@@ -6,12 +6,12 @@ import { addCounter } from './counter.duck';
 import CounterComp from './Counter.component';
 import * as selectors from './counter.selector';
 
-const handleClick = (value, addCounter) => e => {
+export const handleClick = (value, addCounter) => e => {
   e.preventDefault();
   addCounter(value);
 };
 
-const Counter = props => <CounterComp {...props} handleClick={handleClick} />;
+export const Counter = props => <CounterComp {...props} handleClick={handleClick} />;
 
 /***************
  **** Redux ****
